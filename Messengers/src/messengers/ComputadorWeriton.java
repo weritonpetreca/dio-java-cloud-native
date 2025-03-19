@@ -10,16 +10,20 @@ public class ComputadorWeriton {
         /*Não se sabe qual App
           Mas qualquer um deverá enviar e receber mensagens
          */
-        String appEscolhido = "msn";
+        String appEscolhido = "tlg";
 
-        if (appEscolhido.equals("tlg")) {
-            smi = new Telegram();
-        } else if (appEscolhido.equals("msn")) {
-            smi = new MSNMessenger();
-        } else if (appEscolhido.equals("fbm")) {
-            smi = new FacebookMenssenger();
+        switch (appEscolhido) {
+            case "tlg" -> smi = new Telegram();
+            case "msn" -> smi = new MSNMessenger();
+            case "fbm" -> smi = new FacebookMenssenger();
+            default -> {
+            }
         }
-        smi.enviarMensagem("Ola, Weriton!");
-        smi.receberMensagem();
+        if (smi != null) {
+            smi.enviarMensagem();
+            smi.receberMensagem();
+        } else {
+            System.out.println("Selecione um aplicativo de mensagem válido");
+        }
     }
 }

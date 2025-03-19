@@ -1,12 +1,14 @@
 package apps;
 
 public class Telegram extends ServicoMensagemInstantanea {
-    public void enviarMensagem(String mensagem) {
+    @Override
+    public void enviarMensagem() {
         validarConexaoInternet();
-        System.out.println("Enviando mensagem: " + mensagem + " via Telegram");
+        System.out.println("Enviando mensagem via Telegram");
         salvarHistoricoMensagens();
     }
 
+    @Override
     public void receberMensagem() {
         System.out.println("Recebendo mensagem via Telegram");
         salvarHistoricoMensagens();
