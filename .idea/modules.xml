@@ -2,12 +2,18 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/exercicios-java-basico/fundamentos-linguagem-java/AreaQuadrado/AreaQuadrado.iml" filepath="$PROJECT_DIR$/exercicios-java-basico/fundamentos-linguagem-java/AreaQuadrado/AreaQuadrado.iml" />
+      <module fileurl="file://$PROJECT_DIR$/exercicios-java-basico/fundamentos-linguagem-java/AreaTriangulo/AreaTriangulo.iml" filepath="$PROJECT_DIR$/exercicios-java-basico/fundamentos-linguagem-java/AreaTriangulo/AreaTriangulo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/exercicios-java-basico/fundamentos-linguagem-java/ComparandoIdades/ComparandoIdades.iml" filepath="$PROJECT_DIR$/exercicios-java-basico/fundamentos-linguagem-java/ComparandoIdades/ComparandoIdades.iml" />
       <module fileurl="file://$PROJECT_DIR$/ContaBanco/ContaBanco.iml" filepath="$PROJECT_DIR$/ContaBanco/ContaBanco.iml" />
       <module fileurl="file://$PROJECT_DIR$/DesafioControleFluxo/DesafioControleFluxo.iml" filepath="$PROJECT_DIR$/DesafioControleFluxo/DesafioControleFluxo.iml" />
       <module fileurl="file://$PROJECT_DIR$/Escola/Escola.iml" filepath="$PROJECT_DIR$/Escola/Escola.iml" />
+      <module fileurl="file://$PROJECT_DIR$/exercicios-java-basico/estruturas-de-controle/IMC/IMC.iml" filepath="$PROJECT_DIR$/exercicios-java-basico/estruturas-de-controle/IMC/IMC.iml" />
       <module fileurl="file://$PROJECT_DIR$/Interfaces/Interfaces.iml" filepath="$PROJECT_DIR$/Interfaces/Interfaces.iml" />
       <module fileurl="file://$PROJECT_DIR$/Lanchonete/Lanchonete.iml" filepath="$PROJECT_DIR$/Lanchonete/Lanchonete.iml" />
       <module fileurl="file://$PROJECT_DIR$/Messengers/Messengers.iml" filepath="$PROJECT_DIR$/Messengers/Messengers.iml" />
+      <module fileurl="file://$PROJECT_DIR$/exercicios-java-basico/fundamentos-linguagem-java/Nascimento/Nascimento.iml" filepath="$PROJECT_DIR$/exercicios-java-basico/fundamentos-linguagem-java/Nascimento/Nascimento.iml" />
+      <module fileurl="file://$PROJECT_DIR$/exercicios-java-basico/estruturas-de-controle/Tabuada/Tabuada.iml" filepath="$PROJECT_DIR$/exercicios-java-basico/estruturas-de-controle/Tabuada/Tabuada.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/dio-java-cloud-native.iml" filepath="$PROJECT_DIR$/.idea/dio-java-cloud-native.iml" />
       <module fileurl="file://$PROJECT_DIR$/java-anatomia-classes/java-anatomia-classes.iml" filepath="$PROJECT_DIR$/java-anatomia-classes/java-anatomia-classes.iml" />
       <module fileurl="file://$PROJECT_DIR$/sistema-smart-tv/sistema-smart-tv.iml" filepath="$PROJECT_DIR$/sistema-smart-tv/sistema-smart-tv.iml" />
