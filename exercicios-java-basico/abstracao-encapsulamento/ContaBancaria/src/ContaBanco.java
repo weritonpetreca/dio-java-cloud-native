@@ -14,7 +14,7 @@ public class ContaBanco {
         // to see how IntelliJ IDEA suggests fixing it.
         criarUsuario();
         primeiroDeposito();
-        int menu = -1;
+        var menu = -1;
         do {
             System.out.println(dadosConta.getName() + ", escolha uma das funcionalidades abaixo:");
             System.out.println("1 - Consultar saldo da conta.");
@@ -24,6 +24,7 @@ public class ContaBanco {
             System.out.println("5 - Pagar um boleto.");
             System.out.println("6 - Saldo total disponível (conta + cheque especial).");
             System.out.println("7 - Sair do aplicativo.");
+            menu = scanner.nextInt();
             
             switch (menu){
                 case 1 -> consultarSaldo();
@@ -32,11 +33,12 @@ public class ContaBanco {
                 case 4 -> sacarDinheiro();
                 case 5 -> pagarBoleto();
                 case 6 -> saldoTotalDisponivel();
-                case 7 -> System.exit(0);
+                case 7 -> {
+                    System.out.println("Obrigado por usar nosso aplicativo!");
+                    System.exit(0);
+                }
                 default -> System.out.println("Opção inválida.");
             }
-
-            
         }
         while (true);
     }
@@ -67,9 +69,7 @@ public class ContaBanco {
         double chequeEspecialInicial = dadosInicialConta.getchequeEspecialInicial();
         dadosConta.setChequeEspecialInicial(chequeEspecialInicial);
 
-        double chequeEspecial = dadosConta.getChequeEspecial();
-        dadosConta.setChequeEspecial(chequeEspecial);
-
+        dadosConta.setChequeEspecial(chequeEspecialInicial);
 
         System.out.println("Bem vindo(a) " + dadosConta.getName() + ", sua conta foi criada com sucesso!\nSeu saldo inicial é de R$" + depositoInicial + "\nFoi também adicionado um valor de R$" + chequeEspecialInicial + " de cheque especial à sua conta.\nA utilização do cheque especial acarretará em uma taxa de 20% do valor utilizado.\nO valor da taxa será descontado no próximo depósito.\n");
     }
@@ -80,5 +80,27 @@ public class ContaBanco {
 
     public static void consultarChequeEspecial(){
         System.out.println("Seu cheque especial atual é de R$" + dadosConta.getChequeEspecial());
+    }
+
+    public static void realizarDeposito(){
+        System.out.println("Insira o valor do depósito: ");
+        double valorDeposito = scanner.nextDouble();
+        dadosConta.depositar(valorDeposito);
+    }
+
+    public static void sacarDinheiro(){
+        System.out.println("Insira o valor do saque: ");
+        double valorSaque = scanner.nextDouble();
+        dadosConta.sacar(valorSaque);
+    }
+
+    public static void pagarBoleto(){
+        System.out.println("Insira o valor do boleto: ");
+        double valorBoleto = scanner.nextDouble();
+        dadosConta.pagarBoleto(valorBoleto);
+    }
+
+    public static void saldoTotalDisponivel(){
+        System.out.println("Seu saldo total disponível é de R$" + (dadosConta.getSaldoConta() + dadosConta.getChequeEspecial()));
     }
 }

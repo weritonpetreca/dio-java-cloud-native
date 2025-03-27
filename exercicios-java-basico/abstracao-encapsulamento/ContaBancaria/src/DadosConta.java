@@ -12,6 +12,10 @@ public class DadosConta {
     public void setName(String name) {
         this.name = name;
     }
+
+    public double getSaldoConta() {
+        return saldoConta;
+    }
     
     public double getChequeEspecialInicial() {
         return chequeEspecialInicial;
@@ -20,30 +24,33 @@ public class DadosConta {
     public void setChequeEspecialInicial(double chequeEspecialInicial) {
         this.chequeEspecialInicial = chequeEspecialInicial;
     }
-
-    public double getSaldoConta() {
-        return saldoConta;
-    }
-
+    
     public double getChequeEspecial() {
         return chequeEspecial;
     }
-
-
+    
     public void setChequeEspecial(double chequeEspecial) {
-            this.chequeEspecial = chequeEspecial;
+        this.chequeEspecial = chequeEspecial;
+    }
+    
+    public void saldoInicial (double depositoInicial){
+        saldoConta = depositoInicial;
     }
 
     public void depositar(double valorDeposito){
-        double saldoTotal = saldoConta + chequeEspecial;
+        double taxaChequeEspecial = 0.2*(chequeEspecialInicial - chequeEspecial);
         if (valorDeposito > 0 && chequeEspecial == chequeEspecialInicial){
             saldoConta += valorDeposito;
             System.out.println("Depósito de R$" + valorDeposito + " realizado com sucesso!");
         } else if (valorDeposito > 0 && chequeEspecial < chequeEspecialInicial){
-            saldoConta += valorDeposito - 1.2*(chequeEspecialInicial - chequeEspecial);
-            if (saldoTotal >= chequeEspecialInicial){
+            saldoConta += valorDeposito - taxaChequeEspecial - (chequeEspecialInicial - chequeEspecial);
+            if (saldoConta < 0){
+                System.out.println("Depósito de R$" + valorDeposito + " realizado com sucesso!\nForam descontados R$" + taxaChequeEspecial + " referente ao uso do limite prévio do seu cheque especial(R$" + (chequeEspecialInicial - chequeEspecial) + ").");
+                chequeEspecial += Math.abs(saldoConta);
+                saldoConta = 0;
+            } else {
+                System.out.println("Depósito de R$" + valorDeposito + " realizado com sucesso!\nForam descontados R$" + taxaChequeEspecial + " referente ao uso do limite prévio do seu cheque especial(R$" + (chequeEspecialInicial - chequeEspecial) + ").");
                 chequeEspecial = chequeEspecialInicial;
-                
             }
             System.out.println("Valor inválido para depósito.");
         }
@@ -55,17 +62,28 @@ public class DadosConta {
             saldoConta -= valorSaque;
             System.out.println("Saque de R$" + valorSaque + " realizado com sucesso!");
         } else if (valorSaque > saldoConta && valorSaque <= saldoTotal){
-            saldoConta = 0;
             chequeEspecial -= (valorSaque - saldoConta);
-            System.out.println("Saque de R$" + valorSaque + " realizado com sucesso!\nForam usados R$" + (valorSaque - saldoConta) + " do seu cheque especial.");
+            saldoConta = 0;
+            System.out.println("Saque de R$" + valorSaque + " realizado com sucesso!\nForam usados R$" + (chequeEspecialInicial - chequeEspecial) + " do seu cheque especial.");
         } else {
             System.out.println("Valor inválido para saque.");
         }
     }
 
-    public void saldoInicial (double depositoInicial){
-        saldoConta = depositoInicial;
+    public void pagarBoleto(double valorBoleto){
+        double saldoTotal = saldoConta + chequeEspecial;
+        if (valorBoleto > 0 && valorBoleto <= saldoConta){
+            saldoConta -= valorBoleto;
+            System.out.println("Boleto de R$" + valorBoleto + " pago com sucesso!");
+        } else if (valorBoleto > saldoConta && valorBoleto <= saldoTotal){
+            chequeEspecial -= (valorBoleto - saldoConta);
+            saldoConta = 0;
+            System.out.println("Boleto de R$" + valorBoleto + " pago com sucesso!\nForam usados R$" + (chequeEspecialInicial - chequeEspecial) + " do seu cheque especial."); 
+        } else {
+            System.out.println("Valor inválido para pagamento de boleto.");
+        }
     }
+
 
 
     
