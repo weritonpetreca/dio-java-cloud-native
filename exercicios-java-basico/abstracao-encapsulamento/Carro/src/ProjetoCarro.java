@@ -1,11 +1,11 @@
-
 import java.util.Scanner;
 
 public class ProjetoCarro {
-    
     public static void main(String[] args) throws Exception {
+    int opcao;
         Scanner scanner = new Scanner(System.in);
-        int opcao = -1;
+        Carro carro = new Carro();
+        System.out.println("Você acaba de entrar no carro.\nO carro está desligado.");
         do { 
             System.out.println("O que deseja fazer?");
             System.out.println("1 - Ligar o carro.");
@@ -19,18 +19,20 @@ public class ProjetoCarro {
             opcao = scanner.nextInt();
 
             switch (opcao) {
-                case 1 -> new Carro().ligar();
-                case 2 -> new Carro().desligar();
-                case 3 -> new Carro().acelerar();
-                case 4 -> new Carro().desacelerar();
-                case 5 -> new Carro().virar();
-                case 6 -> new Carro().verificarVelocidade();
-                case 7 -> new Carro().trocarMarcha();
-                case 8 -> System.exit(0);
-                default -> System.out.println("Opção inválida.");
-            }
+                case 1 -> carro.ligar();
+                case 2 -> carro.desligar();
+                case 3 -> carro.acelerar();
+                case 4 -> carro.desacelerar();
+                case 5 -> carro.virar();
+                case 6 -> carro.verificarStatus();
+                case 7 -> carro.trocarMarcha();
+                case 8 -> {
+                    System.out.println("Saindo do carro.");
+                    scanner.close();
+                    System.exit(0);
+                }
+                    default -> System.out.println("Opção inválida.");
+                }
         } while (true);
-    }
-
-    public static void ligar() {
-}
+    }  
+}   
