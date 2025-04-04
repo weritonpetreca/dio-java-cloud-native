@@ -1,0 +1,47 @@
+---
+config:
+  theme: dark
+  look: neo
+  layout: dagre
+---
+classDiagram
+direction RL
+    class iPhone {
+	    +tocar()
+	    +pausar()
+	    +selecionarMusica(String musica)
+	    +ligar(String numero)
+	    +atender()
+	    +iniciarCorreioVoz()
+	    +exibirPagina(String url)
+	    +adicionarNovaAba()
+	    +atualizarPagina()
+    }
+    class ReprodutorMusical {
+	    +tocar()
+	    +pausar()
+	    +selecionarMusica(String musica)
+    }
+    class AparelhoTelefonico {
+	    +ligar(String numero)
+	    +atender()
+	    +iniciarCorreioVoz()
+    }
+    class NavegadorInternet {
+	    +exibirPagina(String url)
+	    +adicionarNovaAba()
+	    +atualizarPagina()
+    }
+    class Maps {
+        +exibirMapa(String localizacao)
+        +obterDirecoes(String origem, String destino)
+        +buscarPontosInteresse(String localizacao, String tipo)
+    }
+	<<interface>> ReprodutorMusical
+	<<interface>> AparelhoTelefonico
+	<<interface>> NavegadorInternet
+    <<interface>> Maps
+    iPhone --|> ReprodutorMusical
+    iPhone --|> AparelhoTelefonico
+    iPhone --|> NavegadorInternet
+    iPhone --|> Maps
