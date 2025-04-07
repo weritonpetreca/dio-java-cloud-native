@@ -25,5 +25,30 @@ public class Main {
         for (Pessoa pessoa : ordenacaoPessoa.ordenarPorAltura()) {
             System.out.println(pessoa);
         }
+
+        OrdenacaoNumeros ordenacaoNumeros = new OrdenacaoNumeros();
+
+        ordenacaoNumeros.adicionarNumero(5);
+        ordenacaoNumeros.adicionarNumero(2);
+        ordenacaoNumeros.adicionarNumero(8);
+        ordenacaoNumeros.adicionarNumero(1);
+        ordenacaoNumeros.adicionarNumero(3);
+        ordenacaoNumeros.adicionarNumero(7);
+        ordenacaoNumeros.adicionarNumero(4);    
+
+        System.out.println("\nNúmeros Inteiros:");
+        for (int numero : ordenacaoNumeros.listaDeNumeros) {
+            System.out.print(numero + " ");
+        }
+
+        System.out.println("\n\nNúmeros Inteiros Ordenados Ascendente:");
+        for (int numero : ordenacaoNumeros.ordenarAscendente()) {
+            System.out.print(numero + " ");
+        }
+
+        System.out.println("\n\nNúmeros Inteiros Ordenados Descendente:");
+        for (int numero : ordenacaoNumeros.ordenarDescendente()) {
+            System.out.print(numero + " ");
+        }
     }
 }
