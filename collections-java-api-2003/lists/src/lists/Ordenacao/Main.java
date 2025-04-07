@@ -2,43 +2,28 @@ package lists.Ordenacao;
 
 public class Main {
     public static void main(String[] args) {
-        CatalogoLivros catalogoLivros = new CatalogoLivros();
+        OrdenacaoPessoa ordenacaoPessoa = new OrdenacaoPessoa();
+        ordenacaoPessoa.adicionarPessoa("Alice", 30, 1.65);
+        ordenacaoPessoa.adicionarPessoa("Bob", 25, 1.80);
+        ordenacaoPessoa.adicionarPessoa("Charlie", 35, 1.75);
+        ordenacaoPessoa.adicionarPessoa("Diana", 28, 1.60);
+        ordenacaoPessoa.adicionarPessoa("Eve", 22, 1.70);
+        ordenacaoPessoa.adicionarPessoa("Frank", 40, 1.85);
+        ordenacaoPessoa.adicionarPessoa("Grace", 29, 1.68);
 
-        catalogoLivros.adicionarLivro("Livro 1", "Autor 1", 2000);
-        catalogoLivros.adicionarLivro("Livro 1", "Autor 1", 2001);
-        catalogoLivros.adicionarLivro("Livro 2", "Autor 2", 2001);
-        catalogoLivros.adicionarLivro("Livro 3", "Autor 3", 2002);
-        catalogoLivros.adicionarLivro("Livro 4", "Autor 4", 2003);
-        catalogoLivros.adicionarLivro("Livro 5", "Autor 5", 2004);
-        catalogoLivros.adicionarLivro("Livro 6", "Autor 6", 2005);
-        catalogoLivros.adicionarLivro("Livro 7", "Autor 7", 2006);
-        catalogoLivros.adicionarLivro("Livro 8", "Autor 8", 2007);
-        catalogoLivros.adicionarLivro("Livro 9", "Autor 9", 2008);
-        catalogoLivros.adicionarLivro("Livro 10", "Autor 10", 2009);
-
-        System.out.println(catalogoLivros.pesquisarPorAutor("Autor 1"));
-
-        System.out.println(catalogoLivros.perquisarPorIntervaloAnos(2000, 2005));
-
-        System.out.println(catalogoLivros.pesquisarPorTitulo("Livro 1"));
-
-        SomaNumeros somaNumeros = new SomaNumeros();
-
-        somaNumeros.adicionarNumero(10);
-        somaNumeros.adicionarNumero(15);
-        somaNumeros.adicionarNumero(-24);
-        somaNumeros.adicionarNumero(70);
-        somaNumeros.adicionarNumero(3);
-
-        System.out.println("Números Adicionados: ");
-
-        somaNumeros.exibirNumeros();
-
-        System.out.println("Soma: " + somaNumeros.calcularSoma());
+        System.out.println("Lista de pessoas:");
+        for (Pessoa pessoa : ordenacaoPessoa.listaDePessoas) {
+            System.out.println(pessoa);
+        }
         
-        System.out.println("Maior Número: " + somaNumeros.encontrarMaiorNumero());
-        
-        System.out.println("Menor Número: " + somaNumeros.encontrarMenorNumero());
-        
+        System.out.println("\nLista de pessoas ordenada por idade:");
+        for (Pessoa pessoa : ordenacaoPessoa.ordenarPorIdade()) {
+            System.out.println(pessoa);
+        }
+
+        System.out.println("\nLista de pessoas ordenada por altura:");
+        for (Pessoa pessoa : ordenacaoPessoa.ordenarPorAltura()) {
+            System.out.println(pessoa);
+        }
     }
 }
