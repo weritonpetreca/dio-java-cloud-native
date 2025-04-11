@@ -20,5 +20,21 @@ public class Main {
         System.out.println(estoqueProdutos.obterProdutoMaisBarato()); 
         System.out.println(estoqueProdutos.calcularValorTotalEstoque()); 
         System.out.println(estoqueProdutos.obterProdutoMaiorQuantidadeValorTotal()); 
+
+
+        ContagemPalavras contagemPalavras = new ContagemPalavras();
+
+        contagemPalavras.adicionarPalavra("banana", 5);
+        contagemPalavras.adicionarPalavra("maçã", 3);
+        contagemPalavras.adicionarPalavra("uva", 2);
+        contagemPalavras.adicionarPalavra("abacaxi", 1);
+        contagemPalavras.adicionarPalavra("laranja", 4);
+        
+
+        contagemPalavras.exibirContagemPalavras();
+        contagemPalavras.encontrarPalavraMaisFrequente();
+        contagemPalavras.removerPalavra("banana");
+        contagemPalavras.exibirContagemPalavras();
+        contagemPalavras.encontrarPalavraMaisFrequente();
     }
 }
