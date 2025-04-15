@@ -15,5 +15,32 @@ public class Main {
         agenda.exibirAgenda();
 
         agenda.obterProximoEvento();
+
+
+        LivrariaOnline livrariaOnline = new LivrariaOnline();
+
+        livrariaOnline.adicionarLivro("link1", "autor1", 10, "livro1");
+        livrariaOnline.adicionarLivro("link2", "autor2", 20, "livro2");
+        livrariaOnline.adicionarLivro("link3", "autor2", 52, "livro3");
+        livrariaOnline.adicionarLivro("link4", "autor4", 50, "livro4");
+        livrariaOnline.adicionarLivro("link5", "autor5", 52, "livro5");
+        livrariaOnline.adicionarLivro("link6", "autor6", 15, "livro6");
+        livrariaOnline.adicionarLivro("link7", "autor7", 20, "livro7");
+        livrariaOnline.adicionarLivro("link8", "autor2", 8, "livro8");
+        livrariaOnline.adicionarLivro("link9", "autor9", 7, "livro9");
+        livrariaOnline.adicionarLivro("link10", "autor2", 52, "livro10");
+
+        System.out.println(livrariaOnline.exibirLivrosOrdenadosPorPreco());
+        System.out.println(livrariaOnline.exibirLivrosOrdenadosPorAutor());
+        livrariaOnline.removerLivro("livro1");
+        
+        System.out.println(livrariaOnline.exibirLivrosOrdenadosPorPreco());
+        System.out.println(livrariaOnline.exibirLivrosOrdenadosPorAutor());
+
+        System.out.println(livrariaOnline.pesquisarLivrosPorAutor("autor2"));
+
+        System.out.println(livrariaOnline.obterLivroMaisCaro());
+        System.out.println(livrariaOnline.obterLivroMaisBarato());
+
     }
 }
