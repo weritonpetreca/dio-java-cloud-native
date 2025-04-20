@@ -137,7 +137,7 @@ public class Main {
             }
         }
 
-        System.out.println("Seu jogo se encntra da seguinte forma:");
+        System.out.println("Seu jogo se encontra da seguinte forma:");
         System.out.printf((BOARD_TEMPLATE) + "\n", args);
     }
 
