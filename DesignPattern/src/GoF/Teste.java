@@ -1,8 +1,10 @@
 package GoF;
 
+import GoF.facade.Facade;
 import GoF.singleton.SingletonEager;
 import GoF.singleton.SingletonLazy;
 import GoF.singleton.SingletonLazyHolder;
+import GoF.strategy.*;
 
 public class Teste {
     public static void main(String[] args) {
@@ -23,5 +25,26 @@ public class Teste {
         System.out.println(holder);
         holder = SingletonLazyHolder.getInstancia();
         System.out.println(holder);
+
+        //Strategy
+
+        Comportamento normal = new ComportamentoNormal();
+        Comportamento agressivo = new ComportamentoAgressivo();
+        Comportamento defensivo = new ComportamentoDefensivo();
+
+        Robo robo = new Robo();
+        robo.setComportamento(normal);
+
+        robo.mover();
+        robo.setComportamento(agressivo);
+        robo.mover();
+        robo.setComportamento(defensivo);
+        robo.mover();
+
+//        Facade
+
+        Facade facade = new Facade();
+        facade.migrarCliente("Weriton", "37564000");
+
     }
 }
