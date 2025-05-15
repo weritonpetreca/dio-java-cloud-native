@@ -1,6 +1,6 @@
-package org.example.persistence.entity;
+package org.example.persistence;
 
-import org.example.persistence.ConnectionUtil;
+import org.example.persistence.entity.EmployeeEntity;
 
 import java.sql.Statement;
 
@@ -76,9 +76,9 @@ public class EmployeeDAO {
         }
         catch (SQLException ex) {
         ex.printStackTrace();
-    }
+        }
         return entities;
-}
+    }
 
 public EmployeeEntity findById(final long id) {
     var entity = new EmployeeEntity();
